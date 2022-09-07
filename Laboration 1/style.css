@@ -14,6 +14,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     background-color: rgba(128, 128, 128, 0.643);
+    box-shadow: 0 0 20px 10px rgba(49, 49, 49, 0.581);
+
     padding: 2rem;
     border-radius: 3rem;
 }
@@ -30,6 +32,7 @@ body {
 
 .form-group {
     padding: 1rem;
+    color: white;
 }
 .form-group label {
     display: block;
@@ -48,7 +51,7 @@ body {
 .form-group input[type="text"]:focus,
 .form-group input[type="password"]:focus {
     outline: 0;
-    box-shadow: 0 0 3px 3px rgba(141, 34, 195, 0.57);
+    box-shadow: 0 0 3px 5px rgba(141, 34, 195, 0.57);
 }
 
 form p {
@@ -60,11 +63,14 @@ p input[type="submit"] {
     border-radius: 0.31rem;
     border: 0;
     background-color: rgb(100, 133, 144);
+    box-shadow: 0 0 15px 0 rgb(61, 83, 90);
     color: white;
+    text-shadow: 0px 0px 0px 20px black;
     padding: 1rem;
 }
 p input[type="submit"]:hover {
     background-color: rgb(158, 203, 218);
+    text-shadow: none;
     color: black;
     cursor: pointer;
 }
