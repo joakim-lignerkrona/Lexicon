@@ -1,0 +1,70 @@
+body {
+    background: rgb(140, 34, 195);
+    background: linear-gradient(319deg, rgba(140, 34, 195, 1) 0%, rgba(54, 177, 58, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    width: fit-content;
+    height: 30vh;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(128, 128, 128, 0.643);
+    padding: 2rem;
+    border-radius: 3rem;
+}
+.title-container {
+    border-bottom: 2px solid white;
+    color: white;
+    text-align: center;
+}
+.title-container h1 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+}
+
+.form-group {
+    padding: 1rem;
+}
+.form-group label {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 50vw;
+    max-width: 400px;
+    font-size: 1.25rem;
+    border: 0;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: 0;
+    box-shadow: 0 0 3px 3px rgba(141, 34, 195, 0.57);
+}
+
+form p {
+    text-align: right;
+}
+
+p input[type="submit"] {
+    font-size: x-large;
+    border-radius: 0.31rem;
+    border: 0;
+    background-color: rgb(100, 133, 144);
+    color: white;
+    padding: 1rem;
+}
+p input[type="submit"]:hover {
+    background-color: rgb(158, 203, 218);
+    color: black;
+    cursor: pointer;
+}

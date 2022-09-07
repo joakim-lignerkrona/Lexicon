@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Merriweather&family=Open+Sans&display=swap");
+:root {
+    --primary-color: rgb(165, 100, 165);
+    --primary-hover-color: rgb(197, 163, 197);
+    --bg-color: rgb(105, 137, 112);
+
+    --heading-font: "Open Sans", sans-serif;
+    --main-font: "Merriweather", serif;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    background: rgb(34, 193, 195);
+    background: linear-gradient(319deg, var(--bg-color) 40%, rgba(253, 187, 45, 1) 100%);
+    margin: 0;
+    max-height: 100vh;
+}
+.page-wrapper {
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+article.home.post-summary:last-of-type {
+    margin-bottom: 13rem;
+}
+h1 {
+    font-family: "Holtwood One SC", serif;
+    margin: 2rem;
+    font-size: 3rem;
+}
+.home.post-summary {
+    margin: 0 1rem 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.545);
+    border-radius: 2rem;
+}
+.home.post-summary h2 {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    margin: 0.3rem;
+}
+.home.post-summary p {
+    margin-left: 0.3rem;
+    font-family: var(--main-font);
+}
+.home.post-summary .image-container {
+    width: 80%;
+    margin: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.home.post-summary img {
+    max-width: 100%;
+}
+.home.post-summary .btn-container {
+    margin: 0.3rem;
+    text-align: right;
+}
+.home.post-summary .btn-container a {
+    font-size: large;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+.home.post-summary .btn-container a:hover {
+    background-color: var(--primary-hover-color);
+    color: black;
+}
+
+aside {
+    margin: 0;
+    width: 100vw;
+}
+.side-container {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+}
+
+.side-container > * {
+    grid-column-start: 1;
+}
+
+.schedule,
+.socials {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.302);
+}
+.schedule h4,
+.socials h4 {
+    font-family: var(--heading-font);
+    font-size: larger;
+    margin-top: 0.3rem;
+}
+.schedule table,
+.socials ul {
+    margin: auto;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.302);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+.schedule td {
+    padding: 0.2rem;
+}
+.schedule td i {
+    color: rgb(194, 22, 22);
+}
+.fade {
+    animation: fading-animation 1.5s infinite;
+}
+.socials li {
+    list-style: none;
+    margin: 0;
+    margin-top: 0.4rem;
+}
+.socials li i {
+    width: 23px;
+    margin-right: 0.3rem;
+}
+
+.socials a {
+    color: black;
+    font-size: larger;
+    text-decoration: none;
+}
+.socials a:visited {
+    color: black;
+}
+@keyframes fading-animation {
+    0% {
+        opacity: 0%;
+    }
+    25% {
+        opacity: 100%;
+    }
+    75% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@media screen and (min-width: 596px) {
+    .side-container {
+        width: calc(100% - 2rem);
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: calc(50% - 0.5rem) 1rem calc(50% - 0.5rem);
+    }
+    .schedule {
+        grid-column-start: 1;
+    }
+    .socials {
+        grid-column-start: 3;
+    }
+}
+
+@media screen and (min-width: 816px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    section {
+        width: 65%;
+    }
+    aside {
+        position: sticky;
+        top: 2rem;
+        width: 35%;
+    }
+    .side-container {
+        margin-top: 0;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+    .side-container > * {
+        grid-column-start: 1;
+    }
+}
