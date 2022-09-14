@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Merriweather&family=Open+Sans&display=swap");
 :root {
-    --primary-color: rgb(165, 100, 165);
+    --bs-primary: #a564a5;
+    --primary-color: #a564a5;
     --primary-hover-color: rgb(197, 163, 197);
     --bg-color: rgb(105, 137, 112);
 

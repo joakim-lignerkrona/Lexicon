@@ -1,0 +1,37 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import "./variables.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
+body {
+    min-height: 100vh;
+    .main {
+        padding-top: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .img-container {
+        background-image: url("https://loremflickr.com/640/640");
+        background-position: center;
+        border-radius: 2rem;
+        height: 100%;
+        background-repeat: space;
+    }
+    .col-12 .img-container {
+        min-height: 80vw;
+    }
+    @media (prefers-color-scheme: dark) {
+        background-color: black;
+        color: white;
+    }
+    footer {
+        p {
+            text-align: justify;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}
