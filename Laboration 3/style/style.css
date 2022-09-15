@@ -10931,6 +10931,8 @@ textarea.form-control-lg {
   }
 }
 body {
+  background: linear-gradient(239deg, #e080cf, #99c9cb, #ddb7b7, #bfbfdd);
+  background-color: white;
   min-height: 100vh;
 }
 body .main {
@@ -10938,25 +10940,26 @@ body .main {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-body .img-container {
-  background-image: url("https://loremflickr.com/640/640");
-  background-position: center;
-  height: 100%;
-  max-height: 300px;
-  background-repeat: space;
-}
-body .full-width {
-  width: 100vw;
-}
-@media (max-width: 767px) {
-  body .img-container {
-    min-height: 80vw;
-  }
-}
 @media (prefers-color-scheme: dark) {
   body {
+    background: linear-gradient(239deg, #650a55, #149198, #981414, #171498);
     background-color: black;
     color: white;
+  }
+  body .bg-light {
+    background-color: #650a55 !important;
+    color: white !important;
+  }
+  body .navbar-brand,
+body a.nav-link,
+body span {
+    color: white !important;
+  }
+  body a.nav-link.active {
+    font-weight: 800;
+  }
+  body li a {
+    color: #b495c0;
   }
 }
 body footer p {
