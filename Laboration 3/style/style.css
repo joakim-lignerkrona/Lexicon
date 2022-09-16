@@ -10940,6 +10940,9 @@ body .main {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+body .container-home .row {
+  min-height: 100vh;
+}
 @media (prefers-color-scheme: dark) {
   body {
     background: linear-gradient(239deg, #650a55, #149198, #981414, #171498);
@@ -10961,13 +10964,9 @@ body span {
   body li a {
     color: #b495c0;
   }
-}
-body footer p {
-  text-align: justify;
-}
-body footer ul {
-  list-style: none;
-  padding: 0;
+  body .card {
+    color: black;
+  }
 }
 body footer a {
   text-decoration: none;

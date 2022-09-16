@@ -10,6 +10,9 @@ body {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .container-home .row {
+        min-height: 100vh;
+    }
 
     @media (prefers-color-scheme: dark) {
         background: linear-gradient(239deg, #650a55, #149198, #981414, #171498);
@@ -30,15 +33,11 @@ body {
         li a {
             color: $light;
         }
+        .card {
+            color: black;
+        }
     }
     footer {
-        p {
-            text-align: justify;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
         a {
             text-decoration: none;
         }
