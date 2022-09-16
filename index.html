@@ -76,7 +76,9 @@
       </div>
     </div>
     <script>
-      let storedItems = JSON.parse(localStorage.getItem("jockanStoredVisited"));
+      let storedItems = localStorage.getItem("jockanStoredVisited")
+        ? JSON.parse(localStorage.getItem("jockanStoredVisited"))
+        : [];
       let aTags = document.querySelectorAll(".list-group a");
 
       let localVisited = [];
