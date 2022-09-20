@@ -1,0 +1,23 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+.pokemon-container {
+    overflow-x: scroll;
+    margin: auto;
+    scroll-behavior: smooth;
+}
+.pokemon-container img {
+    background-color: lightgrey;
+    border-radius: 2rem;
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+}
+.pokemon-container img:hover {
+    background-color: rgb(162, 160, 160);
+}
+
+#pokemon-image {
+    max-width: 300px;
+}
+#selected-pokemon-container {
+    background-color: burlywood;
+}
