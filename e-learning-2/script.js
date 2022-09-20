@@ -50,7 +50,7 @@ function outputPokemon(pokemon) {
     axios.get(pokemon.species.url).then(response => {
         let englishText = response.data.flavor_text_entries.filter(entry => {
             return entry.language.name == 'en'
-        }).map(entry => { return entry.flavor_text })
+        }).map(entry => { return entry.flavor_text.replace(/\\[n, f]/gm, ' ') })
         console.log(englishText)
         let set = new Set(englishText)
         console.log(set)
@@ -95,7 +95,6 @@ function addListners() {
 
 function scrollSelector(direction, container) {
     let itemStyle = getComputedStyle(pokemonDiv.childNodes[0])
-    let style = getComputedStyle(pokemonDiv.childNodes[0])
     let itemWidth = parseInt(itemStyle.marginLeft) + parseInt(itemStyle.marginRight) + pokemonDiv.childNodes[0].offsetWidth
 
     let scrollableContainer = document.querySelector('.pokemon-container')
