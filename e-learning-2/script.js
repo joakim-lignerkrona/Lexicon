@@ -56,14 +56,11 @@ function outputPokemon(pokemon) {
         console.log(set)
         let fullDescription = ''
         set.forEach(entry => {
-            fullDescription += entry + ' '
+            fullDescription += '<p>' + entry + '</p>'
         })
         const description = document.querySelector('#pokemon-description')
-        description.textContent = fullDescription
-
+        description.innerHTML = fullDescription
     })
-
-
     console.log(pokemon);
     const name = document.querySelector('#pokemon-name')
     name.textContent = capitalizeFirstLetter(pokemon.name)

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container d-flex flex-column">
       <div class="row">
         <div class="col-12">
           <h1 class="mt-5">Pokédex</h1>
@@ -23,8 +23,7 @@
       </div>
 
       <div
-        class="row d-flex justify-content-center align-items-center"
-        style="min-height: 100vh"
+        class="row d-flex justify-content-center align-items-center flex-grow-1"
       >
         <div class="col-12 p-5 rounded-5" id="selected-pokemon-container">
           <div id="selected-pokemon">
@@ -42,21 +41,21 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center bg-light fixed-bottom pt-3">
-      <div class="col-12 col-xl-6 d-flex">
-        <div
-          id="selector-scroll-controll-left"
-          class="justift-content-center align-items-center d-none d-md-flex"
-        >
-          <i class="bi bi-arrow-left fs-2 p-2"></i>
-        </div>
-        <div class="pokemon-container flex-grow-1"></div>
-        <div
-          id="selector-scroll-controll-right"
-          class="justift-content-center align-items-center d-none d-md-flex"
-        >
-          <i class="bi bi-arrow-right fs-2 p-2"></i>
+      <div class="d-flex justify-content-center bg-light pt-3">
+        <div class="col-12 col-xl-6 d-flex">
+          <div
+            id="selector-scroll-controll-left"
+            class="justift-content-center align-items-center d-none d-md-flex"
+          >
+            <i class="bi bi-arrow-left fs-2 p-2"></i>
+          </div>
+          <div class="pokemon-container flex-grow-1"></div>
+          <div
+            id="selector-scroll-controll-right"
+            class="justift-content-center align-items-center d-none d-md-flex"
+          >
+            <i class="bi bi-arrow-right fs-2 p-2"></i>
+          </div>
         </div>
       </div>
     </div>

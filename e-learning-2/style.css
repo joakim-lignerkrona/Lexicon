@@ -1,10 +1,14 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+.container {
+    min-height: 100vh;
+}
 
 .pokemon-container {
     overflow-x: scroll;
     margin: auto;
     scroll-behavior: smooth;
 }
+
 .pokemon-container img {
     background-color: lightgrey;
     border-radius: 2rem;
@@ -20,4 +24,6 @@
 }
 #selected-pokemon-container {
     background-color: burlywood;
+    max-height: 50vh;
+    overflow-y: scroll;
 }
