@@ -1,5 +1,5 @@
 
-var runningInBrowser
+let runningInBrowser
 try {
     runningInBrowser = window ? true : false
 } catch (error) {
@@ -7,8 +7,8 @@ try {
 }
 
 //set inputvärlde från eventuell querystring
-var number1 = runningInBrowser ? parseInt(getQueryVariable('n1')) : undefined
-var number2 = runningInBrowser ? parseInt(getQueryVariable('n2')) : undefined
+let number1 = runningInBrowser ? parseInt(getQueryVariable('n1')) : undefined
+let number2 = runningInBrowser ? parseInt(getQueryVariable('n2')) : undefined
 number1 ? '' : number1 = 5
 number2 ? '' : number2 = 4
 
@@ -46,10 +46,10 @@ if (runningInBrowser)
 
 function getQueryVariable(variable) {
     try {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
+        let query = window.location.search.substring(1);
+        let vars = query.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            let pair = vars[i].split('=');
             if (decodeURIComponent(pair[0]) == variable) {
                 return decodeURIComponent(pair[1]);
             }
