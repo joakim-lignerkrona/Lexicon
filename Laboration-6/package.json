@@ -1,0 +1,12 @@
+{
+  "name": "Laboration-6",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Joakim Lignerkrona",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js -v"
+  }
+}
