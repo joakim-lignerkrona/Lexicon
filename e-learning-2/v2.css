@@ -1,0 +1,158 @@
+body {
+    background: rgb(242, 246, 118);
+    background: radial-gradient(circle, rgba(242, 246, 118, 1) 0%, rgba(232, 72, 72, 1) 99%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.device {
+    aspect-ratio: 3/5;
+    height: 90vh;
+    background-color: beige;
+    border-radius: 30px;
+}
+
+.display {
+    aspect-ratio: 16/9;
+    background-color: white;
+    width: 27rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.buttons {
+    aspect-ratio: 16/3;
+    background-color: white;
+    width: 25rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.scroll-container {
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+    z-index: 30;
+}
+.scroll {
+    background-color: transparent;
+    z-index: 30;
+}
+
+.scroll-wheel {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-color: white;
+    width: 25rem;
+    border-radius: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.image-container {
+    width: 55%;
+    height: 55%;
+    overflow: hidden;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    background-color: white;
+    z-index: 20;
+}
+.selector {
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    box-shadow: -5px 0px 10px 0px black;
+}
+.left-cover {
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("./rubber.webp");
+    background-size: 90px;
+    z-index: 5;
+}
+.selector .item.passed {
+    rotate: -120deg;
+}
+.selector .item.third-previous {
+    rotate: -99deg;
+}
+.selector .item.second-previous {
+    rotate: -66deg;
+}
+.selector .item.previous {
+    rotate: -33deg;
+}
+.selector .item.current {
+    rotate: 0deg;
+}
+.selector .item.next {
+    rotate: 33deg;
+}
+.selector .item.second-next {
+    rotate: 66deg;
+}
+.selector .item.third-next {
+    rotate: 99deg;
+}
+.selector .item {
+    rotate: 120deg;
+    transition: all ease-in-out 0.2s;
+}
+.selector img {
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+    width: 50%;
+}
+.item {
+    transform-origin: 0 50%;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    top: calc(50% - 123px / 2);
+    left: 0%;
+    text-align: right;
+}
+.select-frame {
+    display: inline-block;
+    width: 105%;
+    height: 90px;
+    position: absolute;
+    top: calc(50% - 110px / 2);
+    left: 0%;
+}
+.select-cover {
+    transform-origin: 0 50%;
+    display: inline-block;
+    width: 105%;
+    height: calc(50% - 120px / 2);
+    position: absolute;
+    background-color: rgba(0, 0, 255, 0.278);
+    z-index: 10;
+}
+.cover-top {
+    top: 0;
+    box-shadow: 5px 5px 15px 0px black;
+}
+.cover-btm {
+    bottom: 0;
+    box-shadow: -5px -5px 15px 0px black;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
