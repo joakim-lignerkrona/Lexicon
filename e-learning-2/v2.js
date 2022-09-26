@@ -1,7 +1,14 @@
+
 let pokemonList = []
 let pokemonCache = []
 let selected = 0
 const selector = document.querySelector('.selector')
+document.querySelector('.image-container').addEventListener('click', e => {
+    let display = document.querySelector('.display')
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${selected}`).then(response => {
+        display.innerHTML = response.data.name
+    })
+})
 for (let index = 1; index < 152; index++) {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${index}`)
         .then((response) => {
@@ -103,4 +110,5 @@ function selectPokemon(pokemonList) {
     }
 
 }
+
 
