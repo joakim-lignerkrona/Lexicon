@@ -13,6 +13,11 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <style>
+      form {
+        margin: 2rem;
+      }
+    </style>
   </head>
   <body>
     <form
@@ -21,11 +26,11 @@
     >
       <div class="formgroup">
         <label class="form-label" for="name">Name</label>
-        <input class="form-control" type="text" name="lastName" id="lastName" />
+        <input class="form-control" type="text" name="name" id="name" />
       </div>
       <div class="formgroup">
         <label class="form-label" for="lastName">Last Name</label>
-        <input class="form-control" type="text" name="name" id="name" />
+        <input class="form-control" type="text" name="lastName" id="lastName" />
       </div>
       <div class="formgroup">
         <label class="form-label" for="email">Email</label>
@@ -38,6 +43,15 @@
           type="password"
           name="password"
           id="password"
+        />
+      </div>
+      <div class="formgroup">
+        <label class="form-label" for="passwordRepeat">Repeat password</label>
+        <input
+          class="form-control"
+          type="password"
+          name="passwordRepeat"
+          id="passwordRepeat"
         />
       </div>
 
@@ -75,16 +89,24 @@
         </select>
       </div>
 
-      <div class="form-goup">
+      <div class="form-goup d-flex justify-content-end mt-3">
         <label class="form-check-label" for="agree">Agree to terms</label>
         <input
-          class="form-check-input"
+          class="form-check-input ms-3"
           type="checkbox"
           name="agree"
           id="agree"
+          value="agreed"
         />
       </div>
-      <input class="btn btn-primary" type="submit" value="Sign up" />
+      <div class="form-goup d-flex justify-content-end mt-3">
+        <input
+          class="btn btn-primary"
+          type="submit"
+          name="submit"
+          value="Sign up"
+        />
+      </div>
     </form>
   </body>
 </html>
