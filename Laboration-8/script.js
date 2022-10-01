@@ -36,6 +36,7 @@ select.addEventListener("change", (event) => {
     let input = event.target
     let value = input.value
     post[input.name] = { value, element: input }
+    validateRow(input, value)
 })
 post[select.name] = { value: undefined, element: select }
 function validateForm(posts) {
