@@ -68,6 +68,9 @@ function handleSpecisalCases(formInput) {
 }
 
 function handleErrorsOrSubmit(errors) {
+    if (errors[0]) {
+        errors[0].focus()
+    }
     errors.forEach((error) => {
         error.classList.add("is-invalid");
     });
