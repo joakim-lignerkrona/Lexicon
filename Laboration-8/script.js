@@ -1,77 +1,82 @@
 let formInputs = document.querySelectorAll("input")
 let select = document.querySelector("select")
 const submitButton = document.querySelector("button");
-let post = {}
 
 formInputs.forEach((input) => {
-    post[input.name] = { value: undefined, element: input }
     if (input.type === "submit") {
         input.addEventListener("click", (event) => {
             event.preventDefault()
-            validateForm(post)
+            validateForm()
         })
         return
     }
-
-
     input.addEventListener("input", (event) => {
-        let input = event.target
-        let value = input.value
-        if (input.type === "submit") {
-            return
-        }
-        if (input.checked) {
-            post[input.name] = { value: true, element: input }
-            return
-        }
-        else if (!input.checked && input.type === "checkbox") {
-            post[input.name] = { value: false, element: input }
-            return
-        }
-        post[input.name] = { value, element: input }
-        validateRow(input, value)
+        validateRow(input)
     })
 })
 select.addEventListener("change", (event) => {
-    let input = event.target
-    let value = input.value
-    post[input.name] = { value, element: input }
-    validateRow(input, value)
+    validateRow(select)
 })
-post[select.name] = { value: undefined, element: select }
-function validateForm(posts) {
-    let errors = []
-    for (const key in posts) {
-        if (posts.hasOwnProperty(key)) {
-            const post = posts[key];
-            post.element.classList.remove("is-invalid")
-            if (post.value === undefined || post.value === "") {
-                if (post.element.name !== "submit") {
-                    errors.push(post.element)
-                }
-            } else {
-                post.element.classList.add("is-valid")
-            }
-        }
-    }
-    errors.forEach((error) => {
-        error.classList.add("is-invalid")
-    })
-    if (errors.length === 0) {
-        console.log("no errors");
-        submitForm(posts)
-    }
 
-}
-function submitForm(posts) {
-    console.table(posts);
-}
-function validateRow(input, value) {
-    if (value === undefined || value === "") {
-        /* input.classList.remove("is-valid")
-        input.classList.add("is-invalid") */
-    } else {
+function validateRow(posts) {
+    let input = posts
+    if (
+        input.value !== undefined
+        && input.value !== ""
+        && !input.validity.typeMismatch
+        && !input.validity.tooLong
+        && !input.validity.tooShort
+        && handleSpecisalCases(posts)
+    ) {
         input.classList.remove("is-invalid")
         input.classList.add("is-valid")
+        return true
     }
+    return false
+}
+function validateForm() {
+    let errors = []
+    formInputs.forEach((input) => {
+        if (input.type === "submit") {
+            return
+        }
+        if (!validateRow(input)) {
+            errors.push(input)
+        }
+    })
+    if (!validateRow(select)) {
+        errors.push(select)
+    }
+    handleErrorsOrSubmit(errors);
+}
+
+function handleSpecisalCases(formInput) {
+    switch (formInput.name) {
+        case "email":
+            return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(formInput.value)
+        case "password":
+            return formInput.value.length >= 8
+        case "passwordRepeat":
+            return formInput.value === formInput.parentNode.parentNode.password.value
+        case "country":
+            return formInput.value !== "none"
+        case "agree":
+            return formInput.checked
+        default:
+            return true
+    }
+}
+
+function handleErrorsOrSubmit(errors) {
+    errors.forEach((error) => {
+        error.classList.add("is-invalid");
+    });
+    if (errors.length === 0) {
+        console.log("no errors");
+        submitForm(posts);
+    }
+}
+
+function submitForm(posts) {
+    console.table(posts);
 }
