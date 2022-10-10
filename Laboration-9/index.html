@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./Assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="burger-container">
+          <div class="burger">
+            <div class="line top-line"></div>
+            <div class="line middle-line"></div>
+            <div class="line bottom-line"></div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="./Assets/JL_logo.svg" alt="logo" />
+        </div>
+        <div class="items">
+          <a href="#">Products</a>
+          <a href="#">About</a>
+          <a href="#">Contact us</a>
+          <a href="#">Features</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Laboration 9</h1>
+      <form action="">
+        <div class="formgroup">
+          <label for="selectApplication">Select function</label>
+          <select name="selectApplication" id="selectApplication">
+            <option value="0">Get person</option>
+            <option value="1">Get a name</option>
+            <option value="2">Get a city</option>
+          </select>
+        </div>
+        <div id="functions">
+          <div class="formgroup" id="personFunction">
+            <label class="form-label" for="personSelect">Select a person</label>
+            <select name="personSelect" id="personSelect">
+              <option value="0">John Doe</option>
+              <option value="1">Jane Doe</option>
+              <option value="2">John Smith</option>
+              <option value="3">Jane Smith</option>
+            </select>
+          </div>
+          <div class="formgroup" id="nameFunction">
+            <label class="form-label" for="nameNumber">
+              Get a name from number
+            </label>
+            <input
+              type="number"
+              name="nameNumber"
+              id="nameNumber"
+              min="0"
+              value="0"
+            />
+          </div>
+          <div class="formgroup" id="cityFunction">
+            <label class="form-label" for="cityNumber">
+              Get a city from number
+            </label>
+            <input
+              type="number"
+              name="cityNumber"
+              id="cityNumber"
+              min="0"
+              value="0"
+            />
+          </div>
+        </div>
+      </form>
+      <div id="output">
+        <div id="personOutput">
+          <h2>Person</h2>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2" id="personName">Firstname</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Age:</td>
+                <td><span id="personAge">0</span> år</td>
+              </tr>
+              <tr>
+                <td>Length:</td>
+                <td><span id="personLength">0</span> cm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="nameOutput">
+          <h2>Name</h2>
+          <p id="name">Firstname</p>
+        </div>
+        <div id="cityOutput">
+          <h2>City</h2>
+          <p id="city">City</p>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+    <script src="./Assets/script.js"></script>
+  </body>
+</html>
