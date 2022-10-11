@@ -32,6 +32,7 @@ function validateRow(posts) {
         input.classList.add("is-valid")
         return true
     }
+    input.classList.remove("is-valid")
     return false
 }
 function validateForm() {
