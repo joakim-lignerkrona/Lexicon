@@ -11,6 +11,9 @@ formInputs.forEach((input) => {
         return
     }
     input.addEventListener("input", (event) => {
+        if (input.type === "password") {
+            validateRow(input.parentNode.parentNode.passwordRepeat)
+        }
         validateRow(input)
     })
 })
