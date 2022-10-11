@@ -21,15 +21,15 @@ select.addEventListener("change", (event) => {
     validateRow(select)
 })
 
-function validateRow(posts) {
-    let input = posts
+function validateRow(input) {
+
     if (
         input.value !== undefined
         && input.value !== ""
         && !input.validity.typeMismatch
         && !input.validity.tooLong
         && !input.validity.tooShort
-        && handleSpecisalCases(posts)
+        && handleSpecisalCases(input)
     ) {
         input.classList.remove("is-invalid")
         input.classList.add("is-valid")
@@ -80,10 +80,19 @@ function handleErrorsOrSubmit(errors) {
     });
     if (errors.length === 0) {
         console.log("no errors");
-        submitForm(posts);
+        submitForm();
     }
 }
 
-function submitForm(posts) {
-    console.table(posts);
+function submitForm() {
+    let formData = {}
+    formInputs.forEach((input) => {
+        if (input.type === "submit") {
+            return
+        }
+        formData[input.name] = input.type !== "checkbox" ? input.value : input.checked
+    })
+    formData[select.name] = select.value
+    console.table(formData)
+
 }
