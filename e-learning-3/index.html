@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jockan dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1>TODO</h1>
+      </div>
+      <div id="output" class="output">
+        <div id="todo-template" class="todo">
+          <p class="todo-title">Todo title</p>
+          <div class="button-container">
+            <button class="complete"><i class="fa-solid fa-check"></i></button>
+            <button class="edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="delete">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+        <div id="edit-todo-template" class="todo">
+          <input class="todo-title" value="Todo title"></input>
+          <div class="button-container">
+            <button class="confirm"><i class="fa-solid fa-check"></i></button>
+            <button class="cancel"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+      </div>
+      <form id="todo-form" class="todo-form">
+        <div class="input-group">
+          <input
+            type="text"
+            id="todoInput"
+            class="form-control"
+            placeholder="Add todo"
+          />
+          <button class="btn btn-primary">ADD</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

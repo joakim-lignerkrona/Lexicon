@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+    --clr-primary: hsl(273, 31%, 23%);
+    --clr-primary-hover: hsl(273, 31%, 30%);
+    --clr-primary-active: hsl(273, 31%, 37%);
+
+    --clr-border: #9f9f9f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f1f1f1;
+}
+body * {
+    font-family: "Roboto", sans-serif;
+}
+
+.btn {
+    padding: 0.5em 1.4em;
+    border: 0;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 100ms ease;
+}
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--clr-primary-hover);
+}
+.btn-primary:active {
+    background-color: var(--clr-primary-active);
+}
+
+.wrapper {
+    background-color: #ffffff;
+    max-width: 550px;
+    margin: 3rem auto;
+    height: 70vh;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    background-color: var(--clr-primary);
+    color: #fff;
+    text-align: center;
+    padding: 0.7rem;
+}
+.output {
+    /* background-color: red; */
+    flex: 1;
+    padding-inline: 1rem;
+    overflow: auto;
+}
+.todo-form {
+    border-top: 1px solid var(--clr-border);
+    padding: 1rem;
+}
+.input-group {
+    display: flex;
+}
+.form-control {
+    padding: 0.5em 0.6em;
+    border-radius: 0.6em 0 0 0.6em;
+    flex: 5;
+    border: 1px solid var(--clr-border);
+}
+.form-control:focus,
+.form-control:focus + button {
+    /* border: 2px solid var(--clr-primary); */
+    outline-color: var(--clr-primary);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.input-group button {
+    flex: 1;
+    border-radius: 0 0.6em 0.6em 0;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--clr-border);
+    padding-block: 0.2rem;
+}
+.todo-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.completed .todo-title {
+    text-decoration: line-through;
+}
+.todo i {
+    pointer-events: none;
+}
+.todo button {
+    color: #fff;
+    border: 0;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+    border-radius: 0.2em;
+    transition: background 100ms ease;
+}
+.todo .complete {
+    background-color: var(--clr-primary);
+}
+.todo .complete:hover {
+    background-color: var(--clr-primary-hover);
+}
+.todo .complete:active {
+    background-color: var(--clr-primary-hover);
+}
+.todo .confirm {
+    background-color: hsl(139, 58%, 40%);
+}
+.todo .confirm:hover {
+    background-color: hsl(139, 58%, 30%);
+}
+.todo .confirm:active {
+    background-color: hsl(139, 58%, 20%);
+}
+.todo .edit {
+    background-color: hsl(48, 89%, 50%);
+}
+.todo .edit:hover {
+    background-color: hsl(48, 89%, 40%);
+}
+.todo .edit:active {
+    background-color: hsl(48, 89%, 30%);
+}
+.todo .delete,
+.todo .cancel {
+    background-color: firebrick;
+}
+.todo .delete:hover,
+.todo .cancel:hover {
+    background-color: hsl(0, 68%, 35%);
+}
+.todo .delete:active,
+.todo .cancel:active {
+    background-color: hsl(0, 68%, 25%);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 22px;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar:hover {
+    width: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--clr-primary-hover);
+    border: 2px solid #fff;
+    border-radius: 100vh;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-primary);
+}
