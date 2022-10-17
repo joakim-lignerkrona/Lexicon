@@ -1,3 +1,4 @@
+import { Card } from "./Card";
 
 export class Deck {
     drawQue = { element: null, cards: [] };
@@ -33,7 +34,7 @@ export class Deck {
         console.log(drawCards);
         const cards = drawCards.cards;
         cards.forEach(card => {
-            this.drawQue.cards.push(card);
+            this.drawQue.cards.push(new Card(card, false));
         });
     }
 }

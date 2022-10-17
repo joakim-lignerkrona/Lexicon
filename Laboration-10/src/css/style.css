@@ -23,14 +23,14 @@ main {
     display: flex;
     justify-content: space-evenly;
 }
-.cards {
+.build-piles {
     display: flex;
     overflow-x: scroll;
     flex-wrap: nowrap;
     margin-right: 1rem;
     flex-grow: 1;
 }
-.cards img {
+.build-piles img {
     width: 10vw;
 }
 .card-back {

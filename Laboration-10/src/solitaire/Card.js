@@ -19,11 +19,20 @@ export class Card {
         this.back = document.createElement('img');
         this.back.classList.add('card');
         this.back.classList.add('card-back');
-        this.element.appendChild(this.flipped ? this.back : this.front);
+        this.element.appendChild(this.flipped ? this.front : this.back);
     }
 
     flip() {
         this.flipped = !this.flipped;
+        if (this.flipped) {
+            this.element.appendChild(this.front);
+            this.back.remove();
+        }
+        else {
+            this.element.appendChild(this.back);
+            this.front.remove();
+        }
+
     }
 
     getValue() {

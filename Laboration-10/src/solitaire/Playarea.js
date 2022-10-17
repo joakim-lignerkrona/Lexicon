@@ -10,7 +10,8 @@ export class PlayArea {
             { id: 4, cards: [], element: null },
             { id: 5, cards: [], element: null },
             { id: 6, cards: [], element: null },
-            { id: 7, cards: [], element: null }],
+            { id: 7, cards: [], element: null }
+        ],
     }
     element = null;
     selectedCard = null;
@@ -32,12 +33,13 @@ export class PlayArea {
         this.table.rows.forEach((row, index, array) => {
             for (let i = 0; i < row.id; i++) {
                 const card = cards.shift();
-                i + 1 == row.id ? array[index].cards.push(new Card(card, false)) : array[index].cards.push(new Card(card, true));
+                array[index].cards.push(card)
             }
             array[index].cards.forEach((card, index) => {
                 row.element.appendChild(card.element);
                 card.element.style.zIndex = index;
             })
+            row.cards[row.cards.length - 1].flip();
         })
 
 

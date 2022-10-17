@@ -7,10 +7,15 @@ export class Stack {
     }
 
     addCards(cards) {
+        console.log('Got cards', cards);
+
         cards.forEach(card => {
             this.cardStack.cards.push(card);
+            this.cardStack.element.appendChild(card.element.firstChild);
+            card.flip()
         });
     }
+
 
     removeStack() {
         const cards = [...this.cardStack.cards];
