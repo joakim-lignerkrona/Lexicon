@@ -3,7 +3,11 @@ import { Game } from "./solitaire/Game";
 
 
 
-const game = new Game(document.querySelector('.play-area'), document.querySelector('.deck'), document.querySelector('.stack'), document.querySelector('.build-piles'));
+const game = new Game(
+    document.querySelector('.play-area'), document.querySelector('.deck'),
+    document.querySelector('.stack'),
+    document.querySelector('.build-piles')
+);
 const intervall = setInterval(() => {
     if (game.deck.hasCards) {
         clearInterval(intervall);

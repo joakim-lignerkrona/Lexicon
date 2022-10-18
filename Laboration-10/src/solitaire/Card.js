@@ -7,7 +7,6 @@ export class Card {
     constructor(card, flipped) {
         this.card = card;
         this.flipped = flipped ? true : false;
-        console.log(card);
 
 
         const container = document.createElement('div');

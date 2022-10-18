@@ -9,12 +9,17 @@ export class Game {
         this.stack = new Stack(stackElement);
         this.buildPiles = new BuildPiles(buildPilesElement);
         this.init();
+        console.log(this);
     }
 
     init() {
         this.deck.drawQue.element.addEventListener('click', () => {
-            this.stack.addCards(this.deck.getCards(3));
+            this.draw()
         })
+    }
+    draw() {
+        this.stack.addCards(this.deck.getCards(3));
+        console.log(this)
     }
 
     flipStack() {

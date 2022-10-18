@@ -1,5 +1,3 @@
-
-
 export class Stack {
     cardStack = { element: null, cards: [] };
     constructor(element) {
@@ -11,9 +9,15 @@ export class Stack {
 
         cards.forEach(card => {
             this.cardStack.cards.push(card);
-            this.cardStack.element.appendChild(card.element.firstChild);
+            /* this.cardStack.element.appendChild(card.element.querySelector('img'));
             card.flip()
+            console.log(card.element.querySelector('img')); */
         });
+        this.cardStack.element.innerHTML = '';
+        this.cardStack.element.appendChild(cards[cards.length - 3].element.querySelector('img'));
+        this.cardStack.element.appendChild(cards[cards.length - 2].element.querySelector('img'));
+        this.cardStack.element.appendChild(cards[cards.length - 1].element.querySelector('img'));
+
     }
 
 
