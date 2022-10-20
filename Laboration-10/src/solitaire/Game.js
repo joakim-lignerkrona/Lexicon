@@ -4,10 +4,10 @@ import { Stack } from "./Stack";
 import { BuildPiles } from "./BuildPiles";
 export class Game {
     constructor(playAreaElement, deckElement, stackElement, buildPilesElement) {
-        this.playArea = new PlayArea(playAreaElement);
+        this.buildPiles = new BuildPiles(buildPilesElement);
+        this.playArea = new PlayArea(playAreaElement, this.buildPiles);
         this.deck = new Deck(deckElement);
         this.stack = new Stack(stackElement);
-        this.buildPiles = new BuildPiles(buildPilesElement);
         this.init();
         console.log(this);
     }

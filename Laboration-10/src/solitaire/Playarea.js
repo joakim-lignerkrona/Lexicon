@@ -16,8 +16,9 @@ export class PlayArea {
     element = null;
     selectedCard = null;
 
-    constructor(element) {
+    constructor(element, buildPile) {
         this.element = element;
+        this.buildPile = buildPile;
     }
 
     /**
@@ -75,6 +76,7 @@ export class PlayArea {
         console.log(row.id - 1, indexInRow);
         let movedCard = row.cards.splice(indexInRow, row.cards.length);
         console.log(movedCard[0].element.remove());
+        this.buildPile.addPile(movedCard);
 
 
 
