@@ -40,10 +40,18 @@ export class PlayArea {
                 card.element.style.zIndex = index;
             })
             row.cards[row.cards.length - 1].flip();
+            row.cards[row.cards.length - 1].makeDraggable()
+            row.cards[row.cards.length - 1].onDbClick((e, card) => {
+                console.log(e.target);
+                console.log(card);
+                this.moveToBuildPile(card);
+
+            })
+
         })
-
-
     }
+
+
 
     getRowFromId(id) {
         return this.table.rows.find(row => row.id === id);
@@ -56,4 +64,20 @@ export class PlayArea {
         this.removeCardFromRow(card, fromRowId);
         this.addCardToRow(card, toRowId);
     }
+    moveToBuildPile(card) {
+
+        const row = this.table.rows.find(
+            row => row.cards.find(
+                rowCard => rowCard.card.code === card.card.code
+            )
+        )
+        const indexInRow = row?.cards.lastIndexOf(card)
+        console.log(row.id - 1, indexInRow);
+        let movedCard = row.cards.splice(indexInRow, row.cards.length);
+        console.log(movedCard[0].element.remove());
+
+
+
+    }
+
 }

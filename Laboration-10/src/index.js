@@ -4,7 +4,7 @@ import { Game } from "./solitaire/Game";
 
 
 const game = new Game(
-    document.querySelector('.play-area'), document.querySelector('.deck'),
+    document.querySelector('.play-area'), document.querySelector('.deck button'),
     document.querySelector('.stack'),
     document.querySelector('.build-piles')
 );

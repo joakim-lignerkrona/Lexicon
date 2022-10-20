@@ -62,36 +62,35 @@ main {
 }
 .stack .card {
     position: absolute;
-    display: none;
 }
 .card:not(.empty) {
     cursor: pointer;
     border: 0;
     background-color: transparent;
 }
-.card.empty:not(:only-child) {
+.card.empty:not(:last-child) {
     display: none;
 }
-.stack .card:nth-last-child(1) {
+.stack div:nth-last-child(1) {
     display: block;
     top: 0;
     left: 0;
     z-index: 1;
-    transform: translate(-20px, -10px);
+    transform: translate(20px, 10px);
 }
-.stack .card:nth-last-child(2) {
+.stack div:nth-last-child(2) {
     display: block;
     top: 0;
     left: 0;
     z-index: 2;
     transform: translate(0, 0);
 }
-.stack .card:nth-last-child(3) {
+.stack div:nth-last-child(3) {
     display: block;
     top: 0;
     left: 0;
     z-index: 3;
-    transform: translate(20px, 10px);
+    transform: translate(-20px, -10px);
 }
 .row {
     /* position: relative; */
@@ -103,4 +102,7 @@ main {
     /* left: 50%;
     transform: translateX(-50%); */
     margin-top: -80%;
+}
+.hidden {
+    opacity: 0;
 }

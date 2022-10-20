@@ -9,14 +9,15 @@ export class Stack {
 
         cards.forEach(card => {
             this.cardStack.cards.push(card);
-            /* this.cardStack.element.appendChild(card.element.querySelector('img'));
             card.flip()
+            /* this.cardStack.element.appendChild(card.element.querySelector('img'));
+            
             console.log(card.element.querySelector('img')); */
         });
         this.cardStack.element.innerHTML = '';
-        this.cardStack.element.appendChild(cards[cards.length - 3].element.querySelector('img'));
-        this.cardStack.element.appendChild(cards[cards.length - 2].element.querySelector('img'));
-        this.cardStack.element.appendChild(cards[cards.length - 1].element.querySelector('img'));
+        this.cardStack.element.appendChild(cards[cards.length - 3].element);
+        this.cardStack.element.appendChild(cards[cards.length - 2].element);
+        this.cardStack.element.appendChild(cards[cards.length - 1].element);
 
     }
 

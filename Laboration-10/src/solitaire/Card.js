@@ -19,6 +19,7 @@ export class Card {
         this.back.classList.add('card');
         this.back.classList.add('card-back');
         this.element.appendChild(this.flipped ? this.front : this.back);
+
     }
 
     flip() {
@@ -63,4 +64,33 @@ export class Card {
                 break;
         }
     }
+    makeDraggable() {
+        this.element.addEventListener('dragstart', (event) => {
+            console.log('dragstart');
+            this.element.classList.add('empty')
+            this.element.classList.add('card')
+            this.element.firstChild.classList.add('hidden')
+        })
+        this.element.addEventListener('dragend', (event) => {
+            console.log('dragend');
+
+            this.element.classList.remove('empty')
+            this.element.classList.remove('card')
+            this.element.firstChild.classList.remove('hidden')
+        })
+    }
+    /**
+     * 
+     * @param {function (ClickEvent, Card)} fn 
+     */
+    onDbClick(fn) {
+        this.element.addEventListener('dblclick', (event) => {
+            console.log('double');
+            fn(event, this);
+        });
+    }
+    offDbClick() {
+        this.element.removeEventListener('dblclick');
+    }
+
 }
