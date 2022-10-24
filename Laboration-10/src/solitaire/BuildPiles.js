@@ -14,20 +14,25 @@ export class BuildPiles {
     }
     addPile(card) {
         this.validateCard(card);
-        this.buildPiles[0].pile.push(card);
-        console.log(this.buildPiles.element);
+
 
         this.buildPiles[0].element.appendChild(card[0].element);
     }
 
     validateCard(card) {
-        if (this.buildPiles[0].pile.length === 0) {
-            this.buildPiles[0].suit = card[0].suit;
+
+        console.log(card);
+        if (card[0].card.value === 'ACE') {
+            this.#addToFirstEmpty(card);
+            return 0
         } else {
-            if (this.buildPiles[0].suit !== card[0].suit) {
-                throw new Error('Not the same suit');
-            }
+            return -1
         }
+
+    }
+    #addToFirstEmpty(card) {
+        let emptyBuildPile = this.buildPiles.find(pile => pile.pile.length === 0)
+        emptyBuildPile.pile.push(card);
     }
     getPile(index) {
         return this.buildPiles.piles[index];
